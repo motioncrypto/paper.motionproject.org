@@ -222,8 +222,9 @@ ninja.wallets.paperwallet = {
 		document.getElementById("btcaddress" + idPostFix).innerHTML = bitcoinAddress;
 
 		if (ninja.wallets.paperwallet.encrypt) {
-			var half = privateKey.length / 2;
-			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey.slice(0, half) + '<br />' + privateKey.slice(half);
+			// var half = privateKey.length / 2;
+			// document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey.slice(0, half) + '<br />' + privateKey.slice(half);
+			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey;
 		}
 		else {
 			document.getElementById("btcprivwif" + idPostFix).innerHTML = privateKey;
@@ -266,6 +267,8 @@ ninja.wallets.paperwallet = {
 		if (!hideArt.checked) {
 			limit = ninja.wallets.paperwallet.pageBreakAtArtisticDefault;
 			limitperpage = ninja.wallets.paperwallet.pageBreakAtArtisticDefault;
+			// reduce font size
+			document.getElementById("paperkeyarea").style.fontSize = "90%";
 		}
 		else if (hideArt.checked && paperEncrypt.checked) {
 			limit = ninja.wallets.paperwallet.pageBreakAtDefault;

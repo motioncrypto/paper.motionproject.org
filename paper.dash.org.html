@@ -6449,7 +6449,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		                                padding: 5px 5px 2px 5px; }
 #paperarea .artwallet .btcaddress  
 {
-	position: absolute; top: 240px; left: 139px; z-index: 100; font-size: 10px; background-color: transparent;
+	position: absolute; top: 240px; left: 142px; z-index: 100; font-size: 10px; background-color: transparent;
 	font-weight:bold; color: #000000; margin: 0;
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-90deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-90deg);
@@ -6459,7 +6459,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 } 
 #paperarea .artwallet .btcprivwif  
 {
-	position: absolute; top: 236px; left: 346px; z-index: 100; font-size: 7px; background-color: transparent;
+	position: absolute; top: 248px; left: 344px; z-index: 100; font-size: 7px; background-color: transparent;
 	font-weight:bold; color: #000000; margin: 0;  
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-90deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-90deg);
@@ -6469,7 +6469,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 }
 #paperarea .artwallet .btcencryptedkey
 {
-	position: absolute; top: 174px; left: 332px; z-index: 100; font-size: 8px; background-color: transparent;
+	position: absolute; top: 248px; left: 344px; z-index: 100; font-size: 6px; background-color: transparent;
 	font-weight:bold; color: #000000; margin: 0;  
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-90deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-90deg);
@@ -10047,8 +10047,9 @@ ninja.wallets.paperwallet = {
 		document.getElementById("btcaddress" + idPostFix).innerHTML = bitcoinAddress;
 
 		if (ninja.wallets.paperwallet.encrypt) {
-			var half = privateKey.length / 2;
-			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey.slice(0, half) + '<br />' + privateKey.slice(half);
+			// var half = privateKey.length / 2;
+			// document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey.slice(0, half) + '<br />' + privateKey.slice(half);
+			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey;
 		}
 		else {
 			document.getElementById("btcprivwif" + idPostFix).innerHTML = privateKey;
@@ -10091,6 +10092,8 @@ ninja.wallets.paperwallet = {
 		if (!hideArt.checked) {
 			limit = ninja.wallets.paperwallet.pageBreakAtArtisticDefault;
 			limitperpage = ninja.wallets.paperwallet.pageBreakAtArtisticDefault;
+			// reduce font size
+			document.getElementById("paperkeyarea").style.fontSize = "90%";
 		}
 		else if (hideArt.checked && paperEncrypt.checked) {
 			limit = ninja.wallets.paperwallet.pageBreakAtDefault;
