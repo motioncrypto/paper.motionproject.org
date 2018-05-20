@@ -17,9 +17,9 @@ if (ninja.getQueryString()["culture"] != undefined) {
 if (ninja.getQueryString()["testnet"] == "true" || ninja.getQueryString()["testnet"] == "1") {
 	document.getElementById("testnet").innerHTML = ninja.translator.get("testneteditionactivated");
 	document.getElementById("testnet").style.display = "block";
-	document.getElementById("detailwifprefix").innerHTML = "'9'";
+	document.getElementById("detailwifprefix").innerHTML = "'m'";
 	document.getElementById("detailcompwifprefix").innerHTML = "'c'";
-	Bitcoin.Address.networkVersion = 0x6F; // testnet
+	Bitcoin.Address.networkVersion = 0x6E; // testnet
 	Bitcoin.ECKey.privateKeyPrefix = 0xEF; // testnet
 	ninja.testnetMode = true;
 }
